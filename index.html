@@ -1,143 +1,128 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>1 Voucher</title>
+<title>Racing Game</title>
 
 <style>
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-font-family:Arial,Helvetica,sans-serif;
-}
-
 body{
-background:#0b1220;
-color:#fff;
+margin:0;
+overflow:hidden;
+background:#222;
+font-family:Arial,sans-serif;
 }
 
-header{
+#game{
+position:relative;
+width:100vw;
+height:100vh;
+overflow:hidden;
+background:#444;
+}
+
+#road{
+position:absolute;
+left:50%;
+transform:translateX(-50%);
+width:320px;
+height:100%;
+background:#555;
+border-left:8px solid white;
+border-right:8px solid white;
+}
+
+.line{
+position:absolute;
+left:50%;
+width:10px;
+height:60px;
+background:white;
+transform:translateX(-50%);
+}
+
+#player{
+position:absolute;
+width:50px;
+height:90px;
+background:red;
+border-radius:10px;
+bottom:30px;
+left:135px;
+}
+
+.controls{
+position:absolute;
+bottom:20px;
+width:100%;
 display:flex;
 justify-content:space-between;
-align-items:center;
-padding:20px 8%;
-background:#111827;
-position:sticky;
-top:0;
+padding:0 40px;
+box-sizing:border-box;
 }
 
-.logo{
+button{
+width:90px;
+height:90px;
 font-size:30px;
-font-weight:bold;
-color:#22c55e;
-}
-
-nav a{
-color:#fff;
-text-decoration:none;
-margin-left:20px;
-}
-
-.hero{
-padding:100px 20px;
-text-align:center;
-}
-
-.hero h1{
-font-size:52px;
-margin-bottom:15px;
-}
-
-.hero p{
-max-width:700px;
-margin:auto;
-color:#cbd5e1;
-font-size:18px;
-}
-
-.button{
-display:inline-block;
-margin-top:30px;
-padding:15px 35px;
+border:none;
+border-radius:50%;
 background:#22c55e;
-color:#fff;
-text-decoration:none;
-border-radius:50px;
-font-weight:bold;
-}
-
-.cards{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-gap:20px;
-padding:60px 8%;
-}
-
-.card{
-background:#1e293b;
-padding:25px;
-border-radius:15px;
-transition:.3s;
-}
-
-.card:hover{
-transform:translateY(-8px);
-}
-
-footer{
-background:#111827;
-padding:30px;
-text-align:center;
-color:#94a3b8;
+color:white;
 }
 </style>
 </head>
 
 <body>
 
-<header>
-<div class="logo">1 Voucher</div>
-
-<nav>
-<a href="#">Home</a>
-<a href="#">Offers</a>
-<a href="#">FAQ</a>
-<a href="#">Contact</a>
-</nav>
-
-</header>
-
-<section class="hero">
-<h1>Discover Official Promotions</h1>
-<p>Stay up to date with official promotions and offers. Always read the official terms and conditions before participating.</p>
-
-<a href="#" class="button">View Current Offers</a>
-</section>
-
-<section class="cards">
-
-<div class="card">
-<h2>Latest Promotions</h2>
-<p>Find the newest official offers in one place.</p>
+<div id="game">
+<div id="road">
+<div id="player"></div>
 </div>
 
-<div class="card">
-<h2>Simple & Fast</h2>
-<p>Designed to work smoothly on phones and computers.</p>
+<div class="controls">
+<button id="left">⬅</button>
+<button id="right">➡</button>
+</div>
 </div>
 
-<div class="card">
-<h2>Support</h2>
-<p>Contact us if you have questions about using the website.</p>
-</div>
+<script>
+const player=document.getElementById("player");
 
-</section>
+let x=135;
 
-<footer>
-<p>© 2026 1 Voucher. Independent promotional information website.</p>
-</footer>
+document.getElementById("left").onclick=()=>{
+x-=20;
+if(x<0)x=0;
+player.style.left=x+"px";
+}
+
+document.getElementById("right").onclick=()=>{
+x+=20;
+if(x>270)x=270;
+player.style.left=x+"px";
+}
+
+document.addEventListener("keydown",(e)=>{
+if(e.key==="ArrowLeft"){
+x-=20;
+if(x<0)x=0;
+}
+if(e.key==="ArrowRight"){
+x+=20;
+if(x>270)x=270;
+}
+player.style.left=x+"px";
+});
+
+for(let i=0;i<12;i++){
+let line=document.createElement("div");
+line.className="line";
+line.style.top=(i*100)+"px";
+document.getElementById("road").appendChild(line);
+}
+</script>
 
 </body>
 </html>
