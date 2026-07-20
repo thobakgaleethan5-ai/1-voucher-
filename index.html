@@ -10,19 +10,19 @@
 margin:0;
 padding:0;
 box-sizing:border-box;
-font-family:Arial,sans-serif;
+font-family:Arial,Helvetica,sans-serif;
 }
 
 body{
-background:#0f172a;
-color:white;
+background:#0b1220;
+color:#fff;
 }
 
 header{
 display:flex;
 justify-content:space-between;
 align-items:center;
-padding:20px 10%;
+padding:20px 8%;
 background:#111827;
 position:sticky;
 top:0;
@@ -35,30 +35,26 @@ color:#22c55e;
 }
 
 nav a{
-color:white;
+color:#fff;
 text-decoration:none;
 margin-left:20px;
 }
 
 .hero{
-height:90vh;
-display:flex;
-flex-direction:column;
-justify-content:center;
-align-items:center;
+padding:100px 20px;
 text-align:center;
-padding:20px;
 }
 
 .hero h1{
-font-size:55px;
+font-size:52px;
 margin-bottom:15px;
 }
 
 .hero p{
-max-width:650px;
-font-size:20px;
-color:#d1d5db;
+max-width:700px;
+margin:auto;
+color:#cbd5e1;
+font-size:18px;
 }
 
 .button{
@@ -66,35 +62,39 @@ display:inline-block;
 margin-top:30px;
 padding:15px 35px;
 background:#22c55e;
-color:white;
+color:#fff;
 text-decoration:none;
-border-radius:40px;
-font-size:18px;
+border-radius:50px;
+font-weight:bold;
 }
 
-.features{
+.cards{
 display:grid;
 grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-gap:25px;
-padding:60px 10%;
+gap:20px;
+padding:60px 8%;
 }
 
-.box{
+.card{
 background:#1e293b;
-padding:30px;
-border-radius:20px;
-text-align:center;
+padding:25px;
+border-radius:15px;
+transition:.3s;
+}
+
+.card:hover{
+transform:translateY(-8px);
 }
 
 footer{
-text-align:center;
-padding:30px;
 background:#111827;
-margin-top:40px;
+padding:30px;
+text-align:center;
+color:#94a3b8;
 }
 </style>
-
 </head>
+
 <body>
 
 <header>
@@ -110,39 +110,33 @@ margin-top:40px;
 </header>
 
 <section class="hero">
+<h1>Discover Official Promotions</h1>
+<p>Stay up to date with official promotions and offers. Always read the official terms and conditions before participating.</p>
 
-<h1>Welcome to 1 Voucher</h1>
-
-<p>
-Find information about official promotions and offers in one place.
-Always check the official terms and conditions before participating.
-</p>
-
-<a class="button" href="#">Explore Offers</a>
-
+<a href="#" class="button">View Current Offers</a>
 </section>
 
-<section class="features">
+<section class="cards">
 
-<div class="box">
-<h2>Official Promotions</h2>
-<p>Browse current offers from official sources.</p>
+<div class="card">
+<h2>Latest Promotions</h2>
+<p>Find the newest official offers in one place.</p>
 </div>
 
-<div class="box">
-<h2>Fast Updates</h2>
-<p>See the latest available promotions quickly.</p>
+<div class="card">
+<h2>Simple & Fast</h2>
+<p>Designed to work smoothly on phones and computers.</p>
 </div>
 
-<div class="box">
-<h2>Easy Navigation</h2>
-<p>Simple design that works well on phones.</p>
+<div class="card">
+<h2>Support</h2>
+<p>Contact us if you have questions about using the website.</p>
 </div>
 
 </section>
 
 <footer>
-<p>© 2026 1 Voucher. Independent information website.</p>
+<p>© 2026 1 Voucher. Independent promotional information website.</p>
 </footer>
 
 </body>
