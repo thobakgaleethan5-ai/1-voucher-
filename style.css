@@ -1,65 +1,72 @@
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial,sans-serif;
+}
+
 body{
-    margin:0;
-    overflow:hidden;
-    background:#222;
-    font-family:Arial,sans-serif;
+background:#090b18;
+color:white;
 }
 
-#game{
-    position:relative;
-    width:100vw;
-    height:100vh;
-    overflow:hidden;
+header{
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:20px 8%;
+background:#111827;
+position:sticky;
+top:0;
 }
 
-#road{
-    position:absolute;
-    left:50%;
-    transform:translateX(-50%);
-    width:320px;
-    height:100%;
-    background:#555;
-    border-left:8px solid #fff;
-    border-right:8px solid #fff;
+.logo{
+font-size:28px;
+font-weight:bold;
+color:#22c55e;
 }
 
-#player{
-    position:absolute;
-    width:50px;
-    height:90px;
-    background:red;
-    border-radius:10px;
-    bottom:30px;
-    left:135px;
+nav a{
+color:white;
+text-decoration:none;
+margin-left:20px;
+font-weight:bold;
 }
 
-#score{
-    position:absolute;
-    top:20px;
-    left:20px;
-    background:#000;
-    color:#fff;
-    padding:10px 15px;
-    border-radius:8px;
-    font-size:20px;
+.hero{
+height:90vh;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+text-align:center;
+padding:20px;
+background:linear-gradient(to bottom,#090b18,#101b3d);
 }
 
-.controls{
-    position:absolute;
-    bottom:20px;
-    width:100%;
-    display:flex;
-    justify-content:space-between;
-    padding:0 30px;
-    box-sizing:border-box;
+.hero h1{
+font-size:52px;
+margin-bottom:20px;
 }
 
-.controls button{
-    width:90px;
-    height:90px;
-    border:none;
-    border-radius:50%;
-    font-size:30px;
-    background:#22c55e;
-    color:white;
+.hero p{
+font-size:20px;
+max-width:650px;
+color:#cbd5e1;
+}
+
+button{
+margin-top:30px;
+padding:15px 40px;
+font-size:18px;
+border:none;
+border-radius:40px;
+background:#22c55e;
+color:white;
+cursor:pointer;
+transition:0.3s;
+}
+
+button:hover{
+background:#16a34a;
 }
